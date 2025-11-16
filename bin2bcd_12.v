@@ -75,22 +75,19 @@ module bin2bcd_12 (
             bcd_out     <= 16'd0;
             rdy         <= 1'b0;
         end else begin
-            rdy <= 1'b0; // default, pulse only in DONE
+            rdy <= 1'b0; 
 
             case (PS)
                 IDLE: begin
-                    // wait for en
                 end
 
                 SETUP: begin
-                    // load input, clear BCD and counters
                     bcd_data    <= {16'd0, bin_in};
                     sh_counter  <= 4'd0;
                     add_counter <= 2'd0;
                 end
 
                 ADD: begin
-                    // check each BCD nibble; add 3 if >=5
                     case (add_counter)
                         2'd0: begin
                             if (ones >= 5)    bcd_data[15:12] <= ones + 4'd3;
