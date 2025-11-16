@@ -43,7 +43,7 @@ Open Vivado (2023.1 or later)
 4- Run simulation as needed
 5- Synthesize, implement, and program the Basys3 board
 
-##Author
+###Author
 
 Corina Saenz
 ECE 128 – FPGA Laboratory
